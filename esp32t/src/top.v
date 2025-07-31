@@ -53,7 +53,7 @@ module top #(parameter ISSIMU=0)
     input               QSPI_CS,        // CS D10 IO5 CC 
     input               QSPI_CLK,       // CLK D9 IO18 CC
     input               QSPI_MOSI,      // D D8 IO23
-    input               QSPI_MISO,      // Q D7 IO19
+    inout               QSPI_MISO,      // Q D7 IO19
     input               QSPI_WP,        // WP D6 IO22
     input               QSPI_HD,        // HD D5 IO21 CC
     output  reg         ESP32_MCU_D4,   // RXD
@@ -384,6 +384,9 @@ module top #(parameter ISSIMU=0)
         .QSPI_CS(QSPI_CS),
         .QSPI_WP(QSPI_WP),
         .QSPI_HD(QSPI_HD),
+        .LEFT(left),
+        .RIGHT(right),
+        .AUD_MCLK(AUD_MCLK),
 
         .PS_CE_N(PS_CE_N),
         .PS_CLK(PS_CLK),

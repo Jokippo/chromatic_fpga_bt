@@ -9,10 +9,13 @@ module mem_system_top #(parameter ISSIMU=0)
     
     input               QSPI_CLK,
     input               QSPI_MOSI,
-    input               QSPI_MISO,
+    inout               QSPI_MISO,
     input               QSPI_CS,
     input               QSPI_WP,
     input               QSPI_HD,
+    input    [15:0]     LEFT,
+    input    [15:0]     RIGHT,
+    input               AUD_MCLK,
 
     output              PS_CE_N,
     output              PS_CLK,
@@ -145,6 +148,9 @@ module mem_system_top #(parameter ISSIMU=0)
         .QSPI_MISO(QSPI_MISO),
         .QSPI_WP(QSPI_WP),
         .QSPI_HD(QSPI_HD),
+        .LEFT(LEFT),
+        .RIGHT(RIGHT),
+        .AUD_MCLK(AUD_MCLK),
         
         .qMenuInit(qMenuInit),
         .qDataValid(qDataValid),
